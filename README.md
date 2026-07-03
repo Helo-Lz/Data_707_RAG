@@ -8,7 +8,7 @@ Environnement RAG local avec Ollama (LLM + Embedding) et PostgreSQL/pgvector.
 - Python 3.10+
 - uv (`curl -LsSf https://astral.sh/uv/install.sh | sh`)
 
-## Installation (première fois)
+## Premier lancement
 
 ```bash
 # 1. Se placer dans le projet
@@ -26,7 +26,7 @@ chmod +x start.sh
 > ingère les données et lance l'interface RAG interactive.
 > À noter que le téléchargement des modèles (~2GB) peut prendre plusieurs minutes à la première exécution.
 
-## Utilisation (lancements suivants)
+## Llancements (post installation et premier lancement)
 
 ```bash
 cd ~/DATA_707
@@ -41,14 +41,6 @@ docker compose down
 
 > Les données (modèles Ollama + base vectorielle) sont conservées entre les arrêts grâce aux volumes Docker.
 
-## Recréer l'environnement de zéro
-
-```bash
-docker compose down -v
-rm -rf .venv/
-uv sync
-./start.sh
-```
 
 ## Structure du projet
 
@@ -63,7 +55,7 @@ DATA_707/
 └── .venv/               # Environnement Python (généré par uv sync)
 ```
 
-## Services
+## Services existants dans l'environnement
 
 | Service  | URL / Port             | Rôle                                             |
 |----------|------------------------|--------------------------------------------------|
