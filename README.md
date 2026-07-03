@@ -5,14 +5,14 @@ Environnement RAG local avec Ollama (LLM + Embedding) et PostgreSQL/pgvector.
 ## Prérequis
 
 - Docker + Docker Compose
-- Python 3.10+
+- Python 3.13+
 - uv (`curl -LsSf https://astral.sh/uv/install.sh | sh`)
 
 ## Premier lancement
 
 ```bash
 # 1. Se placer dans le projet
-cd ~/DATA_707
+cd ~/Nom_Du_Repertoire
 
 # 2. Créer l'environnement Python et installer les dépendances
 uv sync
@@ -24,12 +24,12 @@ chmod +x start.sh
 
 > `start.sh` permet de démarrer les conteneurs. Il attend que les modèles soient prêts, puis
 > ingère les données et lance l'interface RAG interactive.
-> À noter que le téléchargement des modèles (~2GB) peut prendre plusieurs minutes à la première exécution.
+> À noter que le téléchargement des modèles (~2GB) peut prendre environ 30 minutes lors de la première exécution.
 
-## Llancements (post installation et premier lancement)
+## Lancements (post installation et premier lancement)
 
 ```bash
-cd ~/DATA_707
+cd ~/Nom_Du_Repertoire
 ./start.sh
 ```
 
@@ -45,7 +45,7 @@ docker compose down
 ## Structure du projet
 
 ```
-DATA_707/
+Nom_Du_Repertoire/
 ├── docker-compose.yml   # Ollama + pgvector
 ├── start.sh             # Point d'entrée unique
 ├── pyproject.toml       # Dépendances Python (uv)

@@ -56,11 +56,11 @@ embeddings = OllamaEmbeddings(
 # Stockage dans pgvector la base de données PostgreSQL
 print("Stockage des vecteurs dans PostgreSQL...")
 vector_store = PGVector.from_documents(
-    documents=documents, # le document à stocker
-    embedding=embeddings, # le modèle d'embedding à utiliser
+    documents=documents,
+    embedding=embeddings,
     collection_name=COLLECTION_NAME,
     connection=PG_CONNECTION,
-    pre_delete_collection=True   # Repart de zéro à chaque exécution
+    pre_delete_collection=False  # La vérification en amont évite une ré-ingestion
 )
 
 print(f"\nIngestion terminée : {len(documents)} documents stockés.")
